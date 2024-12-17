@@ -1,0 +1,5 @@
+services:
+  HeimrichHannot\CalendarListReaderBundle\:
+    resource: '../src/{EventListener}/*'
+    autowire: true
+    autoconfigure: true
