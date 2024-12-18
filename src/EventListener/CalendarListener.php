@@ -12,14 +12,14 @@ class CalendarListener implements EventSubscriberInterface
     public function __invoke(ListBeforeRenderItemEvent|ReaderBeforeRenderEvent $event): void
     {
         if ($event instanceof ListBeforeRenderItemEvent) {
-            /**
+            /*
              * @phpstan-ignore property.notFound
              */
             if (!$event->getListConfiguration()->getListConfigModel()->useCalendarExtension) {
                 return;
             }
         } else {
-            /**
+            /*
              * @phpstan-ignore property.notFound
              */
             if (!$event->getReaderConfig()->useCalendarExtension) {

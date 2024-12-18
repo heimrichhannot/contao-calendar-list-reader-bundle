@@ -29,6 +29,7 @@
     "rector/rector": "^1.0 || ^2.0",
     "contao/contao-rector": "dev-main",
     "heimrichhannot/contao-list-bundle": "^1.54",
-    "heimrichhannot/contao-reader-bundle": "^1.42.4"
+    "heimrichhannot/contao-reader-bundle": "^1.42.4",
+    "symplify/easy-coding-standard": "^12.5"
   }
 }

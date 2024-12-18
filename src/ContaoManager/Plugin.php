@@ -20,13 +20,13 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
     {
         return [
             BundleConfig::create(HeimrichHannotCalendarListReaderBundle::class)
-            ->setLoadAfter([
-                ContaoCoreBundle::class,
-                ContaoCalendarBundle::class,
-                HeimrichHannotContaoListBundle::class,
-                HeimrichHannotContaoReaderBundle::class,
-                HeimrichHannotContaoFilterBundle::class
-            ])
+                ->setLoadAfter([
+                    ContaoCoreBundle::class,
+                    ContaoCalendarBundle::class,
+                    HeimrichHannotContaoListBundle::class,
+                    HeimrichHannotContaoReaderBundle::class,
+                    HeimrichHannotContaoFilterBundle::class,
+                ]),
         ];
     }
 
