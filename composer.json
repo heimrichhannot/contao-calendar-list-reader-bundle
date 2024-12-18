@@ -7,10 +7,12 @@
     "php": "^8.1",
     "contao/core-bundle": "^4.13 || ^5.0",
     "contao/calendar-bundle": "^4.13 || ^5.0",
-    "doctrine/dbal": "^3.0 || ^4.0",
-    "spatie/schema-org": "^3.0",
-    "symfony/http-foundation": "^5.4 || ^6.0",
+    "symfony/event-dispatcher": "^5.4 || ^6.0",
     "symfony/http-kernel": "^5.4 || ^6.0"
+  },
+  "conflict": {
+    "heimrichhannot/contao-list-bundle": "<1.54.0",
+    "heimrichhannot/contao-reader-bundle": "<1.42.4"
   },
   "autoload": {
     "psr-4": {
