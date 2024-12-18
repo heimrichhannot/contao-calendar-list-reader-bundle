@@ -24,7 +24,11 @@
   },
   "require-dev": {
     "contao/manager-plugin": "^2.0",
-    "phpstan/phpstan": "^2.0",
-    "phpstan/phpstan-symfony": "^2.0"
+    "phpstan/phpstan": "^1.0",
+    "phpstan/phpstan-symfony": "^1.0 || ^2.0",
+    "rector/rector": "^1.0 || ^2.0",
+    "contao/contao-rector": "dev-main",
+    "heimrichhannot/contao-list-bundle": "^1.54",
+    "heimrichhannot/contao-reader-bundle": "^1.42.4"
   }
 }

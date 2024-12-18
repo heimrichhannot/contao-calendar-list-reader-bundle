@@ -12,6 +12,10 @@ class EventBuilder extends Events
     {
     }
 
+    /**
+     * @param array<string, mixed> $item
+     * @return void
+     */
     public function prepareItemData(array &$item): void
     {
         $model = CalendarEventsModel::findByPk($item['id']);
@@ -20,7 +24,11 @@ class EventBuilder extends Events
         }
 
         $this->arrEvents = [];
-        $this->addEvent($model, $model->startTime, $model->endTime, 0, $model->endTime, $model->pid);
+        $this->addEvent($model, (int)$model->startTime, (int)$model->endTime, 0, (int)$model->endTime, (int)$model->pid);
+        if (empty($this->arrEvents)) {
+            return;
+        }
+
         $events = $this->arrEvents[array_key_first($this->arrEvents)];
         $item   = array_merge(
             $item,
@@ -28,7 +36,7 @@ class EventBuilder extends Events
         );
     }
 
-    protected function compile()
+    protected function compile(): void
     {
     }
 }

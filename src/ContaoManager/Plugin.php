@@ -30,7 +30,10 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
         ];
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
+    /**
+     * @phpstan-ignore missingType.iterableValue
+     */
+    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig): mixed
     {
         return $loader->load(__DIR__ . '/../../config/services.yaml');
     }
