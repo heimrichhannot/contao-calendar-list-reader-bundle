@@ -9,6 +9,9 @@ use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
 use HeimrichHannot\CalendarListReaderBundle\HeimrichHannotCalendarListReaderBundle;
+use HeimrichHannot\FilterBundle\HeimrichHannotContaoFilterBundle;
+use HeimrichHannot\ListBundle\HeimrichHannotContaoListBundle;
+use HeimrichHannot\ReaderBundle\HeimrichHannotContaoReaderBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class Plugin implements BundlePluginInterface, ConfigPluginInterface
@@ -20,6 +23,9 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
             ->setLoadAfter([
                 ContaoCoreBundle::class,
                 ContaoCalendarBundle::class,
+                HeimrichHannotContaoListBundle::class,
+                HeimrichHannotContaoReaderBundle::class,
+                HeimrichHannotContaoFilterBundle::class
             ])
         ];
     }

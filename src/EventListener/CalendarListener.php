@@ -2,8 +2,6 @@
 
 namespace HeimrichHannot\CalendarListReaderBundle\EventListener;
 
-use Contao\CalendarEventsModel;
-use Contao\StringUtil;
 use HeimrichHannot\CalendarListReaderBundle\Contao\EventBuilder;
 use HeimrichHannot\ListBundle\Event\ListBeforeRenderItemEvent;
 use HeimrichHannot\ReaderBundle\Event\ReaderBeforeRenderEvent;
@@ -11,8 +9,18 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class CalendarListener implements EventSubscriberInterface
 {
-    public function __invoke(ListBeforeRenderItemEvent $event): void
+    public function __invoke(ListBeforeRenderItemEvent|ReaderBeforeRenderEvent $event): void
     {
+        if ($event instanceof ListBeforeRenderItemEvent) {
+            if (!$event->getListConfiguration()->getListConfigModel()->useCalendarExtension) {
+                return;
+            }
+        } else {
+            if (!$event->getReaderConfig()->useCalendarExtension) {
+                return;
+            }
+        }
+
         $eventBuilder = new EventBuilder();
         $item = $event->getTemplateData();
         $eventBuilder->prepareItemData($item);

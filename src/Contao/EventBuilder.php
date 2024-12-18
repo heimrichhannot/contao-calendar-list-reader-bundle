@@ -21,9 +21,10 @@ class EventBuilder extends Events
 
         $this->arrEvents = [];
         $this->addEvent($model, $model->startTime, $model->endTime, 0, $model->endTime, $model->pid);
-        $item = array_merge(
+        $events = $this->arrEvents[array_key_first($this->arrEvents)];
+        $item   = array_merge(
             $item,
-            $this->arrEvents[array_key_first($this->arrEvents)][array_key_first($this->arrEvents[array_key_first($this->arrEvents)])]
+            $events[array_key_first($events)]
         );
     }
 
