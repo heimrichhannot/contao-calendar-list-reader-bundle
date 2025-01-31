@@ -9,8 +9,10 @@ PaletteManipulator::create()
     ->applyToPalette('default', 'tl_reader_config');
 
 $dca['fields']['useCalendarExtension'] = [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'checkbox',
-    'eval'      => ['tl_class' => 'clr'],
-    'sql'       => "char(1) NOT NULL default ''",
+    'eval' => [
+        'tl_class' => 'clr',
+    ],
+    'sql' => "char(1) NOT NULL default ''",
 ];
